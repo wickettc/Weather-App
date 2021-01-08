@@ -44,7 +44,10 @@ class LocationSearchInput extends React.Component {
                                 className: 'location-search-input',
                             })}
                         />
-                        <div className="autocomplete-dropdown-container">
+                        <div
+                            className="autocomplete-dropdown-container"
+                            // style={{ display: 'flex', flexDirection: 'column' }}
+                        >
                             {loading && <div>Loading...</div>}
                             {suggestions.map((suggestion) => {
                                 const className = suggestion.active
