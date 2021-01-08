@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 
 const Today = ({
     displayUnits,
@@ -13,6 +14,22 @@ const Today = ({
     sunset,
     temp,
 }) => {
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const response = await axios.get(
+    //             `https://maps.googleapis.com/maps/api/geocode/json`,
+    //             {
+    //                 params: {
+    //                     key: process.env.REACT_APP_GOOGLE_API_KEY,
+    //                     latlng: `${lat},${lon}`,
+    //                 },
+    //             }
+    //         );
+    //         console.log(response);
+    //     }
+    //     fetchData();
+    // }, [lat, lon]);
+
     return (
         <div>
             <h1>Today</h1>
