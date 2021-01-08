@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import weatherCall from '../api/weatherCall';
 import NavBar from './NavBar';
+import '../css/App.css';
 
 function App() {
     const [units, setUnits] = useState('imperial');
