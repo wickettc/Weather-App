@@ -10,7 +10,7 @@ const NavBar = ({ getUnits, getSearchBarLocation }) => {
         <div className="nav-bar">
             <div className="nav-bar-router-container">
                 <nav>
-                    <Link to="/today">
+                    <Link to="/">
                         <li>Today</li>
                     </Link>
                     <Link to="hourly">
