@@ -19,16 +19,21 @@ class LocationSearchInput extends React.Component {
             .then((results) => getLatLng(results[0]))
             .then((latLng) => {
                 this.props.getSearchBarLocation(latLng);
+                this.setState({ address: '' });
             })
             .catch((error) => console.error('Error', error));
     };
 
     render() {
+        const searchOptions = {
+            types: ['(regions)'],
+        };
         return (
             <PlacesAutocomplete
                 value={this.state.address}
                 onChange={this.handleChange}
                 onSelect={this.handleSelect}
+                searchOptions={searchOptions}
             >
                 {({
                     getInputProps,
@@ -43,10 +48,7 @@ class LocationSearchInput extends React.Component {
                                 className: 'location-search-input',
                             })}
                         />
-                        <div
-                            className="autocomplete-dropdown-container"
-                            // style={{ display: 'flex', flexDirection: 'column' }}
-                        >
+                        <div className="autocomplete-dropdown-container">
                             {loading && <div>Loading...</div>}
                             {suggestions.map((suggestion) => {
                                 const className = suggestion.active
@@ -64,6 +66,7 @@ class LocationSearchInput extends React.Component {
                                       };
                                 return (
                                     <div
+                                        key={suggestion}
                                         {...getSuggestionItemProps(suggestion, {
                                             className,
                                             style,
