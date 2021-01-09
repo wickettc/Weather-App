@@ -1,7 +1,9 @@
-import axios from 'axios';
-import React, { useEffect } from 'react';
+import React from 'react';
+import Map from './Map';
+import '../css/Today.css';
 
 const Today = ({
+    city,
     displayUnits,
     lat,
     lon,
@@ -14,33 +16,32 @@ const Today = ({
     sunset,
     temp,
 }) => {
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const response = await axios.get(
-    //             `https://maps.googleapis.com/maps/api/geocode/json`,
-    //             {
-    //                 params: {
-    //                     key: process.env.REACT_APP_GOOGLE_API_KEY,
-    //                     latlng: `${lat},${lon}`,
-    //                 },
-    //             }
-    //         );
-    //         console.log(response);
-    //     }
-    //     fetchData();
-    // }, [lat, lon]);
-
     return (
-        <div>
-            <h1>Today</h1>
-            <div>{clouds}</div>
-            <div>{dew_point}</div>
-            <div>{`${feels_like} ${displayUnits}`}</div>
-            <div>{humidity}</div>
-            <div>{pressure}</div>
-            <div>{sunrise}</div>
-            <div>{sunset}</div>
-            <div>{temp}</div>
+        <div className="container">
+            <h1>Today in {city}</h1>
+            <div className="today-container">
+                <div className="word-container">
+                    <div>Clouds {clouds}%</div>
+                    <div>Dew Point {dew_point}</div>
+                    <div>
+                        Feels Like {feels_like} {displayUnits}
+                    </div>
+                    <div>
+                        Actual Temp {temp} {displayUnits}
+                    </div>
+                    <div>Humidity {humidity}%</div>
+                    <div>Pressure {pressure}</div>
+                    <div>
+                        Sunrise{' '}
+                        {new Date(sunrise * 1000).toLocaleTimeString('en-US')}
+                    </div>
+                    <div>
+                        Sunset{' '}
+                        {new Date(sunset * 1000).toLocaleTimeString('en-US')}
+                    </div>
+                </div>
+                <Map lat={lat} lon={lon} />
+            </div>
         </div>
     );
 };

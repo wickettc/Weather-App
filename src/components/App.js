@@ -14,6 +14,7 @@ function App() {
     const [latLon, setLatLon] = useState({});
     const [loading, setLoading] = useState(true);
     const [weatherData, setWeatherData] = useState({});
+    const [city, setCity] = useState('');
 
     const getSearchBarLocation = (latLng) => {
         const { lat, lng } = latLng;
@@ -31,8 +32,9 @@ function App() {
                 latLon.longitude,
                 units
             );
-            console.log(response.data);
-            setWeatherData(response.data);
+            console.log(response);
+            setCity(response[1].data.name);
+            setWeatherData(response[0].data);
             setLoading(false);
         }
         //skips running function on init render to prevent errors because latLon has not yet been set
@@ -67,6 +69,7 @@ function App() {
                                     <div className="loader"></div>
                                 ) : (
                                     <Today
+                                        city={city}
                                         displayUnits={displayUnits}
                                         lat={weatherData.lat}
                                         lon={weatherData.lon}
@@ -91,7 +94,6 @@ function App() {
                     </Switch>
                 </div>
             </Router>
-            {/* <button onClick={() => getWeather()}>Get Weather</button> */}
         </div>
     );
 }

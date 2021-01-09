@@ -1,0 +1,16 @@
+.container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.today-container {
+    display: flex;
+}
+
+.word-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
