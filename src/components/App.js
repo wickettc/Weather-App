@@ -89,8 +89,24 @@ function App() {
                                 )
                             }
                         />
-                        <Route exact path="/hourly" component={Hourly} />
-                        <Route exact path="/sevenday" component={SevenDay} />
+                        <Route
+                            exact
+                            path="/hourly"
+                            render={(props) =>
+                                loading ? (
+                                    <div className="loader"></div>
+                                ) : (
+                                    <Hourly hourly={weatherData.hourly} />
+                                )
+                            }
+                        />
+                        <Route
+                            exact
+                            path="/sevenday"
+                            render={() => {
+                                return <SevenDay />;
+                            }}
+                        />
                     </Switch>
                 </div>
             </Router>

@@ -13,10 +13,10 @@ const NavBar = ({ getUnits, getSearchBarLocation }) => {
                     <Link to="/">
                         <li>Today</li>
                     </Link>
-                    <Link to="hourly">
+                    <Link to="/hourly">
                         <li>Hourly</li>
                     </Link>
-                    <Link to="sevenday">
+                    <Link to="/sevenday">
                         <li>Seven Day</li>
                     </Link>
                 </nav>

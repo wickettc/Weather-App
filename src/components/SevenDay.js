@@ -3,7 +3,7 @@ import React from 'react';
 const SevenDay = () => {
     return (
         <div>
-            <div></div>
+            <div>Seven Day</div>
         </div>
     );
 };
