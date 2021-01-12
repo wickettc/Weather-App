@@ -1,0 +1,16 @@
+.list-data-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.list-data-container div {
+    margin: 5px;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    height: 0;
+}

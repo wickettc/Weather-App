@@ -49,7 +49,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        units === 'imperial' ? setDisplayUnits('F°') : setDisplayUnits('C°');
+        units === 'imperial' ? setDisplayUnits('°F') : setDisplayUnits('°C');
     }, [units]);
 
     return (
@@ -96,7 +96,11 @@ function App() {
                                 loading ? (
                                     <div className="loader"></div>
                                 ) : (
-                                    <Hourly hourly={weatherData.hourly} />
+                                    <Hourly
+                                        city={city}
+                                        displayUnits={displayUnits}
+                                        hourly={weatherData.hourly}
+                                    />
                                 )
                             }
                         />

@@ -3,6 +3,7 @@ import PlacesAutocomplete, {
     geocodeByAddress,
     getLatLng,
 } from 'react-places-autocomplete';
+import uniqid from 'uniqid';
 
 class LocationSearchInput extends React.Component {
     constructor(props) {
@@ -66,7 +67,7 @@ class LocationSearchInput extends React.Component {
                                       };
                                 return (
                                     <div
-                                        key={suggestion}
+                                        key={uniqid()}
                                         {...getSuggestionItemProps(suggestion, {
                                             className,
                                             style,
