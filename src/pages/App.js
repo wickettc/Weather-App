@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import weatherCall from '../api/weatherCall';
-import Today from './Today';
-import Hourly from './Hourly';
-import SevenDay from './SevenDay';
-import NavBar from './NavBar';
+import Today from '../pages/Today';
+import Hourly from '../pages/Hourly';
+import SevenDay from '../pages/SevenDay';
+import NavBar from '../components/NavBar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import _ from 'lodash';
 import '../css/App.css';

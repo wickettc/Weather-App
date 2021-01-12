@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ListData from './ListData';
+import ListData from '../components/ListData';
 
 const Hourly = (props) => {
     const [initDate, setInitDate] = useState('');
@@ -9,10 +9,10 @@ const Hourly = (props) => {
             weekday: 'long',
             day: 'numeric',
         });
+
         return (
             <div>
-                {if (date !== initDate)} 
-                {/* start here */}
+                {date !== initDate ? <div>{date}</div> : null}
                 <ListData key={hour.dt} hour={hour} />
             </div>
         );
