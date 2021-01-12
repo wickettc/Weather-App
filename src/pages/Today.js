@@ -15,10 +15,17 @@ const Today = ({
     sunrise,
     sunset,
     temp,
+    weather,
 }) => {
     return (
         <div className="container">
-            <h1>Today in {city}</h1>
+            <div className="title-container">
+                <h1>Today in {city}</h1>
+                <img
+                    alt={weather[0].description}
+                    src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
+                />
+            </div>
             <div className="today-container">
                 <div className="word-container">
                     <div>Clouds {clouds}%</div>

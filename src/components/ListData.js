@@ -5,7 +5,7 @@ import ExpandData from './ExpandData';
 const ListData = ({ hour, displayUnits }) => {
     const [showExpand, setShowExpand] = useState(false);
 
-    const { dt, temp, clouds } = hour;
+    const { dt, temp, clouds, weather } = hour;
     const date = new Date(dt * 1000);
 
     return (
@@ -23,6 +23,10 @@ const ListData = ({ hour, displayUnits }) => {
                 {displayUnits}
             </div>
             <div>Clouds {clouds}%</div>
+            <img
+                alt={weather[0].description}
+                src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
+            />
             {showExpand ? (
                 <div>
                     <ExpandData

@@ -85,6 +85,7 @@ function App() {
                                         sunrise={weatherData.current.sunrise}
                                         sunset={weatherData.current.sunset}
                                         temp={weatherData.current.temp}
+                                        weather={weatherData.current.weather}
                                     />
                                 )
                             }
@@ -107,9 +108,17 @@ function App() {
                         <Route
                             exact
                             path="/sevenday"
-                            render={() => {
-                                return <SevenDay />;
-                            }}
+                            render={() =>
+                                loading ? (
+                                    <div className="loader"></div>
+                                ) : (
+                                    <SevenDay
+                                        city={city}
+                                        displayUnits={displayUnits}
+                                        daily={weatherData.daily}
+                                    />
+                                )
+                            }
                         />
                     </Switch>
                 </div>
