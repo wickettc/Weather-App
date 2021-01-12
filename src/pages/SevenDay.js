@@ -1,14 +1,15 @@
 import React from 'react';
+import ListDaily from '../components/ListDaily';
 
 const SevenDay = ({ city, displayUnits, daily }) => {
     const renderDaily = daily.map((day) => {
-        console.log(day);
-        console.log(new Date(day.dt * 1000));
+        return <ListDaily key={day.dt} day={day} displayUnits={displayUnits} />;
     });
 
     return (
         <div>
-            <div>Seven Day</div>
+            <h1>The Next Week in {city}</h1>
+            <div>{renderDaily}</div>
         </div>
     );
 };

@@ -1,0 +1,12 @@
+.list-daily-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.list-daily-container div {
+    margin: 5px;
+}

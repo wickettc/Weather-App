@@ -1,15 +1,19 @@
 import React from 'react';
-import ListData from '../components/ListData';
+import ListHourly from '../components/ListHourly';
 import '../css/Hourly.css';
 
 const Hourly = ({ hourly, displayUnits, city }) => {
     //holder date to only display each date once
     let holderDate = '';
     const renderHourly = hourly.map((hour) => {
-        const date = new Date(hour.dt * 1000).toLocaleString('en-US', {
+        const d = new Date(hour.dt * 1000);
+        const weekday = d.toLocaleString('en-US', {
             weekday: 'long',
+        });
+        const day = d.toLocaleString('en-US', {
             day: 'numeric',
         });
+        const date = `${weekday} ${day}`;
 
         //only display each date once
         let showDate;
@@ -22,8 +26,10 @@ const Hourly = ({ hourly, displayUnits, city }) => {
 
         return (
             <div key={hour.dt}>
-                {showDate ? <div className="show-date">{showDate}</div> : null}
-                <ListData displayUnits={displayUnits} hour={hour} />
+                {showDate ? (
+                    <div className="show-date bold">{showDate}</div>
+                ) : null}
+                <ListHourly displayUnits={displayUnits} hour={hour} />
             </div>
         );
     });

@@ -10,6 +10,10 @@ body {
     width: 100vw;
 }
 
+.bold {
+    font-weight: 900;
+}
+
 /* loader */
 .loader {
     margin-top: 8%;

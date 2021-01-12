@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/Expand-Data.css';
+import '../css/Expand-Hourly.css';
 
-const ExpandData = ({
+const ExpandHourly = ({
     dew_point,
     feels_like,
     humidity,
@@ -9,10 +9,10 @@ const ExpandData = ({
     displayUnits,
 }) => {
     return (
-        <div className="expand-data-container">
-            <div>Dew Point: {dew_point}</div>
+        <div className="expand-hourly-container">
+            <div>Dew Point: {Math.round(dew_point)}</div>
             <div>
-                Feels Like: {feels_like} {displayUnits}
+                Feels Like: {Math.round(feels_like)} {displayUnits}
             </div>
             <div>Humidity: {humidity}%</div>
             <div>Pressure: {pressure}</div>
@@ -20,4 +20,4 @@ const ExpandData = ({
     );
 };
 
-export default ExpandData;
+export default ExpandHourly;
