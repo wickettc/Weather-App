@@ -10,3 +10,7 @@
 .list-daily-container div {
     margin: 15px;
 }
+
+.time-daily {
+    font-weight: 500;
+}

@@ -11,6 +11,15 @@
     align-items: center;
 }
 
+.title-container h1 {
+    font-weight: 900;
+}
+
+.title-container-2 {
+    font-weight: 900;
+    margin-top: 0;
+}
+
 .today-container {
     display: flex;
 }
@@ -19,4 +28,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-right: 5%;
+    width: 30%;
 }

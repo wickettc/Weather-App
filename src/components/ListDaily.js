@@ -5,7 +5,7 @@ import ExpandDaily from './ExpandDaily';
 const ListDaily = ({ displayUnits, day }) => {
     const [showExpand, setShowExpand] = useState(false);
 
-    const { pop, dt, temp } = day;
+    const { pop, dt, temp, weather } = day;
     let displayDate = '';
     if (
         new Date(dt * 1000).toLocaleDateString() ===
@@ -24,7 +24,7 @@ const ListDaily = ({ displayUnits, day }) => {
                 onClick={() => setShowExpand(!showExpand)}
                 className="list-daily-container"
             >
-                <div className="bold">{displayDate}</div>
+                <div className="time-daily">{displayDate}</div>
                 <div>
                     {Math.round(temp.max)} {displayUnits.deg}/
                     {Math.round(temp.min)} {displayUnits.deg}
@@ -32,9 +32,10 @@ const ListDaily = ({ displayUnits, day }) => {
                 <div>
                     <i className="fas fa-tint"></i> {Math.round(pop)}%
                 </div>
+                <div>{weather[0].main}</div>
                 <img
-                    alt={day.weather[0].description}
-                    src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                    alt={weather[0].description}
+                    src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
                 />
             </div>
             {showExpand ? (

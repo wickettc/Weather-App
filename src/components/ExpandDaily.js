@@ -30,10 +30,14 @@ const ExpandDaily = ({ day, displayUnits }) => {
                 })}
             </div>
             <div>Clouds: {clouds}%</div>
-            <div>Dew Point: {dew_point}</div>
-            <div>Pressure: {pressure}</div>
             <div>
-                Wind: {degreeToDirection(wind_deg)} at {wind_speed}
+                Dew Point: {Math.round(dew_point)}
+                {displayUnits.deg}
+            </div>
+            <div>Pressure: {(pressure * 0.02953).toFixed(2)}in</div>
+            <div>
+                <i className="fas fa-wind"></i> {degreeToDirection(wind_deg)}{' '}
+                {Math.round(wind_speed)}
                 {displayUnits.speed}
             </div>
         </div>

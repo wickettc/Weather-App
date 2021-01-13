@@ -14,7 +14,7 @@ const ListHourly = ({ hour, displayUnits }) => {
                 onClick={() => setShowExpand(!showExpand)}
                 className="list-hourly-container"
             >
-                <div className="bold">
+                <div className="hourly-time">
                     {date.toLocaleString('en-US', {
                         hour: 'numeric',
                     })}
@@ -26,6 +26,7 @@ const ListHourly = ({ hour, displayUnits }) => {
                 <div>
                     <i className="fas fa-tint"></i> {Math.round(pop)}%
                 </div>
+                <div>{weather[0].main}</div>
                 <img
                     alt={weather[0].description}
                     src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}

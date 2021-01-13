@@ -26,9 +26,7 @@ const Hourly = ({ hourly, displayUnits, city }) => {
 
         return (
             <div key={hour.dt}>
-                {showDate ? (
-                    <div className="show-date bold">{showDate}</div>
-                ) : null}
+                {showDate ? <div className="show-date">{showDate}</div> : null}
                 <ListHourly displayUnits={displayUnits} hour={hour} />
             </div>
         );
