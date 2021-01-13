@@ -21,7 +21,7 @@ const ListHourly = ({ hour, displayUnits }) => {
                 </div>
                 <div>
                     {Math.round(temp)}
-                    {displayUnits}
+                    {displayUnits.deg}
                 </div>
                 <div>
                     <i className="fas fa-tint"></i> {Math.round(pop)}%
@@ -33,13 +33,7 @@ const ListHourly = ({ hour, displayUnits }) => {
             </div>
             {showExpand ? (
                 <div>
-                    <ExpandHourly
-                        displayUnits={displayUnits}
-                        dew_point={hour.dew_point}
-                        feels_like={hour.feels_like}
-                        humidity={hour.humidity}
-                        pressure={hour.pressure}
-                    />
+                    <ExpandHourly displayUnits={displayUnits} hour={hour} />
                 </div>
             ) : null}
             <hr />

@@ -26,8 +26,8 @@ const ListDaily = ({ displayUnits, day }) => {
             >
                 <div className="bold">{displayDate}</div>
                 <div>
-                    {Math.round(temp.max)} {displayUnits}/{Math.round(temp.min)}{' '}
-                    {displayUnits}
+                    {Math.round(temp.max)} {displayUnits.deg}/
+                    {Math.round(temp.min)} {displayUnits.deg}
                 </div>
                 <div>
                     <i className="fas fa-tint"></i> {Math.round(pop)}%
@@ -37,7 +37,9 @@ const ListDaily = ({ displayUnits, day }) => {
                     src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
                 />
             </div>
-            {showExpand ? <ExpandDaily /> : null}
+            {showExpand ? (
+                <ExpandDaily day={day} displayUnits={displayUnits} />
+            ) : null}
             <hr />
         </div>
     );

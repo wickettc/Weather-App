@@ -10,7 +10,10 @@ import '../css/App.css';
 
 function App() {
     const [units, setUnits] = useState('imperial');
-    const [displayUnits, setDisplayUnits] = useState('F°');
+    const [displayUnits, setDisplayUnits] = useState({
+        deg: 'F°',
+        speed: 'MPH',
+    });
     const [latLon, setLatLon] = useState({});
     const [loading, setLoading] = useState(true);
     const [weatherData, setWeatherData] = useState({});
@@ -49,7 +52,9 @@ function App() {
     }, []);
 
     useEffect(() => {
-        units === 'imperial' ? setDisplayUnits('°F') : setDisplayUnits('°C');
+        units === 'imperial'
+            ? setDisplayUnits({ deg: 'F°', speed: 'MPH' })
+            : setDisplayUnits({ deg: '°C', speed: 'M/S' });
     }, [units]);
 
     return (
@@ -71,21 +76,7 @@ function App() {
                                     <Today
                                         city={city}
                                         displayUnits={displayUnits}
-                                        lat={weatherData.lat}
-                                        lon={weatherData.lon}
-                                        clouds={weatherData.current.clouds}
-                                        dew_point={
-                                            weatherData.current.dew_point
-                                        }
-                                        feels_like={
-                                            weatherData.current.feels_like
-                                        }
-                                        humidity={weatherData.current.humidity}
-                                        pressure={weatherData.current.pressure}
-                                        sunrise={weatherData.current.sunrise}
-                                        sunset={weatherData.current.sunset}
-                                        temp={weatherData.current.temp}
-                                        weather={weatherData.current.weather}
+                                        weatherData={weatherData}
                                     />
                                 )
                             }

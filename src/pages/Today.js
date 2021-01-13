@@ -2,21 +2,19 @@ import React from 'react';
 import Map from '../components/Map';
 import '../css/Today.css';
 
-const Today = ({
-    city,
-    displayUnits,
-    lat,
-    lon,
-    clouds,
-    dew_point,
-    feels_like,
-    humidity,
-    pressure,
-    sunrise,
-    sunset,
-    temp,
-    weather,
-}) => {
+const Today = ({ city, displayUnits, weatherData }) => {
+    const {
+        clouds,
+        dew_point,
+        feels_like,
+        humidity,
+        pressure,
+        sunrise,
+        sunset,
+        temp,
+        weather,
+    } = weatherData.current;
+    const { lat, lon } = weatherData;
     return (
         <div className="container">
             <div className="title-container">
@@ -32,25 +30,25 @@ const Today = ({
                     <div>Dew Point {Math.round(dew_point)}</div>
                     <div>
                         Feels Like {Math.round(feels_like)}
-                        {displayUnits}
+                        {displayUnits.deg}
                     </div>
                     <div>
                         Actual {Math.round(temp)}
-                        {displayUnits}
+                        {displayUnits.deg}
                     </div>
                     <div>Humidity {humidity}%</div>
                     <div>Pressure {pressure}</div>
                     <div>
                         Sunrise{' '}
                         {new Date(sunrise * 1000).toLocaleTimeString('en-US', {
-                            hour: '2-digit',
+                            hour: 'numeric',
                             minute: '2-digit',
                         })}
                     </div>
                     <div>
                         Sunset{' '}
                         {new Date(sunset * 1000).toLocaleTimeString('en-US', {
-                            hour: '2-digit',
+                            hour: 'numeric',
                             minute: '2-digit',
                         })}
                     </div>
