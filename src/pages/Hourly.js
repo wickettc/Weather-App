@@ -35,7 +35,7 @@ const Hourly = ({ hourly, displayUnits, city }) => {
     });
 
     return (
-        <div>
+        <div className="hourly-container">
             <h1>The Next 48 Hours in {city}</h1>
             <div>{renderHourly}</div>
         </div>

@@ -1,4 +1,13 @@
 .expand-hourly-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand-hourly-container div {
+    flex-basis: 25%;
+    margin: 5px;
 }

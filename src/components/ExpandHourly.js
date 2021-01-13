@@ -10,12 +10,13 @@ const ExpandHourly = ({
 }) => {
     return (
         <div className="expand-hourly-container">
-            <div>Dew Point: {Math.round(dew_point)}</div>
             <div>
                 Feels Like: {Math.round(feels_like)} {displayUnits}
             </div>
+            <div>Dew Point: {Math.round(dew_point)}</div>
             <div>Humidity: {humidity}%</div>
             <div>Pressure: {pressure}</div>
+            <div> hey world</div>
         </div>
     );
 };

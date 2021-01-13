@@ -1,3 +1,11 @@
+.hourly-container {
+    width: 38%;
+}
+
+.hourly-container h1 {
+    text-align: center;
+}
+
 .show-date {
     font-size: 1.5rem;
     font-weight: 500;
