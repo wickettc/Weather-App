@@ -23,9 +23,11 @@ const NavBar = ({ getUnits, getSearchBarLocation }) => {
             </div>
             <div className="search-and-units-container">
                 <ToggleSwitch getUnits={getUnits} />
-                <LocationSearchInput
-                    getSearchBarLocation={getSearchBarLocation}
-                />
+                <div className="search-container">
+                    <LocationSearchInput
+                        getSearchBarLocation={getSearchBarLocation}
+                    />
+                </div>
             </div>
         </div>
     );

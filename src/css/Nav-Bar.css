@@ -1,10 +1,10 @@
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+    align-items: center;
     width: 100vw;
     background-color: black;
-    height: 10vh;
+    height: 40px;
 }
 
 .nav-bar-router-container {
@@ -36,5 +36,10 @@
 .search-and-units-container {
     display: flex;
     justify-content: space-evenly;
-    width: 50vw;
+    width: 40vw;
+}
+
+.search-container {
+    margin: auto;
+    height: 100%;
 }

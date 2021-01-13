@@ -29,22 +29,30 @@ const Today = ({
             <div className="today-container">
                 <div className="word-container">
                     <div>Clouds {clouds}%</div>
-                    <div>Dew Point {dew_point}</div>
+                    <div>Dew Point {Math.round(dew_point)}</div>
                     <div>
-                        Feels Like {feels_like} {displayUnits}
+                        Feels Like {Math.round(feels_like)}
+                        {displayUnits}
                     </div>
                     <div>
-                        Actual Temp {temp} {displayUnits}
+                        Actual {Math.round(temp)}
+                        {displayUnits}
                     </div>
                     <div>Humidity {humidity}%</div>
                     <div>Pressure {pressure}</div>
                     <div>
                         Sunrise{' '}
-                        {new Date(sunrise * 1000).toLocaleTimeString('en-US')}
+                        {new Date(sunrise * 1000).toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                        })}
                     </div>
                     <div>
                         Sunset{' '}
-                        {new Date(sunset * 1000).toLocaleTimeString('en-US')}
+                        {new Date(sunset * 1000).toLocaleTimeString('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                        })}
                     </div>
                 </div>
                 <Map lat={lat} lon={lon} />

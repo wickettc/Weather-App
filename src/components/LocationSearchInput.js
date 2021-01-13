@@ -44,18 +44,18 @@ class LocationSearchInput extends React.Component {
                 }) => (
                     <div>
                         <input
+                            style={{ height: '25px' }}
                             {...getInputProps({
                                 placeholder: 'Search Places ...',
                                 className: 'location-search-input',
                             })}
                         />
-                        <div className="autocomplete-dropdown-container">
+                        <div style={{ position: 'absolute' }}>
                             {loading && <div>Loading...</div>}
                             {suggestions.map((suggestion) => {
                                 const className = suggestion.active
                                     ? 'suggestion-item--active'
                                     : 'suggestion-item';
-                                // inline style for demonstration purpose
                                 const style = suggestion.active
                                     ? {
                                           backgroundColor: '#fafafa',

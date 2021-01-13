@@ -23,7 +23,9 @@ const ListHourly = ({ hour, displayUnits }) => {
                     {Math.round(temp)}
                     {displayUnits}
                 </div>
-                <div>Prec: {pop}%</div>
+                <div>
+                    <i className="fas fa-tint"></i> {Math.round(pop)}%
+                </div>
                 <img
                     alt={weather[0].description}
                     src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}

@@ -29,7 +29,9 @@ const ListDaily = ({ displayUnits, day }) => {
                     {Math.round(temp.max)} {displayUnits}/{Math.round(temp.min)}{' '}
                     {displayUnits}
                 </div>
-                <div>Prec: {Math.round(pop)}%</div>
+                <div>
+                    <i className="fas fa-tint"></i> {Math.round(pop)}%
+                </div>
                 <img
                     alt={day.weather[0].description}
                     src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
