@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import '../css/List-Hourly.css';
-import ExpandHourly from './ExpandHourly';
+import React, { useState } from "react";
+import "../css/List-Hourly.css";
+import ExpandHourly from "./ExpandHourly";
 
 const ListHourly = ({ hour, displayUnits }) => {
     const [showExpand, setShowExpand] = useState(false);
@@ -15,8 +15,8 @@ const ListHourly = ({ hour, displayUnits }) => {
                 className="list-hourly-container"
             >
                 <div className="hourly-time">
-                    {date.toLocaleString('en-US', {
-                        hour: 'numeric',
+                    {date.toLocaleString("en-US", {
+                        hour: "numeric",
                     })}
                 </div>
                 <div>
@@ -24,7 +24,7 @@ const ListHourly = ({ hour, displayUnits }) => {
                     {displayUnits.deg}
                 </div>
                 <div>
-                    <i className="fas fa-tint"></i> {Math.round(pop)}%
+                    <i className="fas fa-tint"></i> {pop * 100}%
                 </div>
                 <div>{weather[0].main}</div>
                 <img

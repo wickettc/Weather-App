@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import weatherCall from '../api/weatherCall';
-import Today from '../pages/Today';
-import Hourly from '../pages/Hourly';
-import SevenDay from '../pages/SevenDay';
-import NavBar from '../components/NavBar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import _ from 'lodash';
-import '../css/App.css';
+import React, { useEffect, useState } from "react";
+import weatherCall from "../api/weatherCall";
+import Today from "../pages/Today";
+import Hourly from "../pages/Hourly";
+import SevenDay from "../pages/SevenDay";
+import NavBar from "../components/NavBar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import _ from "lodash";
+import "../css/App.css";
 
 function App() {
-    const [units, setUnits] = useState('imperial');
+    const [units, setUnits] = useState("imperial");
     const [displayUnits, setDisplayUnits] = useState({
-        deg: 'F°',
-        speed: 'MPH',
+        deg: "F°",
+        speed: "MPH",
     });
     const [latLon, setLatLon] = useState({});
     const [loading, setLoading] = useState(true);
     const [weatherData, setWeatherData] = useState({});
-    const [city, setCity] = useState('');
+    const [city, setCity] = useState("");
 
     const getSearchBarLocation = (latLng) => {
         const { lat, lng } = latLng;
@@ -25,7 +25,7 @@ function App() {
     };
 
     const getUnits = (e) => {
-        !e.target.checked ? setUnits('imperial') : setUnits('metric');
+        !e.target.checked ? setUnits("imperial") : setUnits("metric");
     };
 
     useEffect(() => {
@@ -52,9 +52,9 @@ function App() {
     }, []);
 
     useEffect(() => {
-        units === 'imperial'
-            ? setDisplayUnits({ deg: 'F°', speed: 'MPH' })
-            : setDisplayUnits({ deg: '°C', speed: 'M/S' });
+        units === "imperial"
+            ? setDisplayUnits({ deg: "F°", speed: "MPH" })
+            : setDisplayUnits({ deg: "°C", speed: "M/S" });
     }, [units]);
 
     return (
@@ -77,6 +77,7 @@ function App() {
                                         city={city}
                                         displayUnits={displayUnits}
                                         weatherData={weatherData}
+                                        pop={weatherData.daily[0].pop}
                                     />
                                 )
                             }

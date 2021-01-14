@@ -1,9 +1,9 @@
-import React from 'react';
-import Map from '../components/Map';
-import degreeToDirection from '../utilities/degreeToDirection';
-import '../css/Today.css';
+import React from "react";
+import Map from "../components/Map";
+import degreeToDirection from "../utilities/degreeToDirection";
+import "../css/Today.css";
 
-const Today = ({ city, displayUnits, weatherData }) => {
+const Today = ({ city, displayUnits, weatherData, pop }) => {
     const {
         clouds,
         dew_point,
@@ -42,22 +42,25 @@ const Today = ({ city, displayUnits, weatherData }) => {
                     <div>Humidity: {humidity}%</div>
                     <div>Pressure: {(pressure * 0.02953).toFixed(2)}in</div>
                     <div>
-                        <i className="fas fa-wind"></i>{' '}
-                        {degreeToDirection(wind_deg)} {wind_speed}{' '}
-                        {displayUnits.speed}{' '}
+                        <i className="fas fa-tint"></i> {pop * 100}%
                     </div>
                     <div>
-                        Sunrise:{' '}
-                        {new Date(sunrise * 1000).toLocaleTimeString('en-US', {
-                            hour: 'numeric',
-                            minute: '2-digit',
+                        <i className="fas fa-wind"></i>{" "}
+                        {degreeToDirection(wind_deg)} {wind_speed}{" "}
+                        {displayUnits.speed}{" "}
+                    </div>
+                    <div>
+                        Sunrise:{" "}
+                        {new Date(sunrise * 1000).toLocaleTimeString("en-US", {
+                            hour: "numeric",
+                            minute: "2-digit",
                         })}
                     </div>
                     <div>
-                        Sunset:{' '}
-                        {new Date(sunset * 1000).toLocaleTimeString('en-US', {
-                            hour: 'numeric',
-                            minute: '2-digit',
+                        Sunset:{" "}
+                        {new Date(sunset * 1000).toLocaleTimeString("en-US", {
+                            hour: "numeric",
+                            minute: "2-digit",
                         })}
                     </div>
                 </div>
