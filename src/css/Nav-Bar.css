@@ -67,6 +67,7 @@
         height: auto;
         min-height: 45px;
         background-color: rgba(0, 0, 0, 0.678);
+        z-index: 1000;
     }
     #nav-bar {
         position: absolute;
