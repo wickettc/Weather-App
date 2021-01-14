@@ -41,7 +41,7 @@
 }
 
 .toggle:checked {
-    background-color: blue;
+    background-color: rgba(50, 72, 198, 0.7);
 }
 
 .toggle:checked:before {

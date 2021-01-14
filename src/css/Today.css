@@ -36,6 +36,11 @@
 
 /* media query */
 @media only screen and (max-width: 700px) {
+    .container {
+        height: 100%;
+        padding-bottom: 10px;
+    }
+
     .title-container {
         font-size: 0.9rem;
     }

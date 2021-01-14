@@ -5,7 +5,7 @@ import '../css/Nav-Bar.css';
 import LocationSearchInput from './LocationSearchInput';
 
 const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
-    const [showDropDown, setShowDropDown] = useState(false);
+    const [showDropDown, setShowDropDown] = useState(true);
 
     const dropdown = showDropDown ? 'dropdown' : '';
 
