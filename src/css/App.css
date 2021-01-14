@@ -30,3 +30,10 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* media query */
+@media only screen and (max-width: 792px) {
+    .content-container {
+        margin-top: 45px;
+    }
+}

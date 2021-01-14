@@ -57,6 +57,9 @@
 /* media query */
 @media only screen and (max-width: 792px) {
     .nav-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
         display: flex;
         flex-direction: column;
         height: auto;
