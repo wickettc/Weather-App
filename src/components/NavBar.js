@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ToggleSwitch from './ToggleSwitch';
 import { Link } from 'react-router-dom';
 import '../css/Nav-Bar.css';
-
 import LocationSearchInput from './LocationSearchInput';
 
 const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
+    const [showDropDown, setShowDropDown] = useState(false);
+
+    const dropdown = showDropDown ? 'dropdown' : '';
+
     return (
         <div className="nav-bar">
-            <div className="nav-bar-router-container">
+            <div className={`nav-bar-router-container ${dropdown}`}>
                 <nav>
                     <Link to="/">
                         <li>Today</li>
@@ -21,7 +24,7 @@ const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
                     </Link>
                 </nav>
             </div>
-            <div className="search-and-units-container">
+            <div className={`search-and-units-container ${dropdown}`}>
                 <ToggleSwitch getUnits={getUnits} />
                 <div className="search-container">
                     <LocationSearchInput
@@ -33,6 +36,11 @@ const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
                     ></i>
                 </div>
             </div>
+            <i
+                onClick={() => setShowDropDown(!showDropDown)}
+                id="nav-bar"
+                className="fas fa-bars"
+            ></i>
         </div>
     );
 };
