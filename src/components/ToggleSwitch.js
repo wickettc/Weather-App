@@ -1,10 +1,13 @@
 import React from 'react';
 import '../css/toggle-switch.css';
 
-const ToggleSwitch = ({ getUnits }) => {
+const ToggleSwitch = ({ getUnits, handleCloseNav }) => {
     return (
         <input
-            onClick={(e) => getUnits(e)}
+            onClick={(e) => {
+                getUnits(e);
+                handleCloseNav();
+            }}
             className="toggle"
             type="checkbox"
             id="degree"

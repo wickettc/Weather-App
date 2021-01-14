@@ -21,6 +21,7 @@ class LocationSearchInput extends React.Component {
             .then((latLng) => {
                 this.props.getSearchBarLocation(latLng);
                 this.setState({ address: '' });
+                this.props.handleCloseNav();
             })
             .catch((error) => console.error('Error', error));
     };

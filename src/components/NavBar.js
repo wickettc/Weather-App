@@ -6,10 +6,12 @@ import LocationSearchInput from './LocationSearchInput';
 
 const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
     const [hideDropDown, setHideDropDown] = useState(true);
-
     const nav = useRef(null);
-
     const dropdown = hideDropDown ? 'dropdown' : '';
+
+    const handleCloseNav = () => {
+        setHideDropDown(true);
+    };
 
     //handles click outside nav to close nav
     useEffect(() => {
@@ -43,13 +45,20 @@ const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
                 </nav>
             </div>
             <div className={`search-and-units-container ${dropdown}`}>
-                <ToggleSwitch getUnits={getUnits} />
+                <ToggleSwitch
+                    handleCloseNav={handleCloseNav}
+                    getUnits={getUnits}
+                />
                 <div className="search-container">
                     <LocationSearchInput
+                        handleCloseNav={handleCloseNav}
                         getSearchBarLocation={getSearchBarLocation}
                     />
                     <i
-                        onClick={() => getGeoCoords()}
+                        onClick={() => {
+                            getGeoCoords();
+                            setHideDropDown(true);
+                        }}
                         className="location-icon fas fa-search-location"
                     ></i>
                 </div>
