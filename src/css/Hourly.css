@@ -53,6 +53,12 @@
     .hourly-container {
         width: 95%;
     }
+    .list-hourly-container div {
+        font-size: 0.95rem;
+    }
+    .list-hourly-container img {
+        height: 50px;
+    }
     .expand-hourly-container {
         font-size: 0.9rem;
     }

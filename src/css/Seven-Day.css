@@ -45,7 +45,11 @@
         width: 85%;
     }
     .list-daily-container div {
-        margin: 5px;
+        font-size: 0.9rem;
+        margin: 2px;
+    }
+    .list-daily-container img {
+        height: 50px;
     }
     .expand-daily-container {
         font-size: 0.9rem;
