@@ -5,7 +5,7 @@ import '../css/Nav-Bar.css';
 
 import LocationSearchInput from './LocationSearchInput';
 
-const NavBar = ({ getUnits, getSearchBarLocation }) => {
+const NavBar = ({ getUnits, getSearchBarLocation, getGeoCoords }) => {
     return (
         <div className="nav-bar">
             <div className="nav-bar-router-container">
@@ -27,6 +27,10 @@ const NavBar = ({ getUnits, getSearchBarLocation }) => {
                     <LocationSearchInput
                         getSearchBarLocation={getSearchBarLocation}
                     />
+                    <i
+                        onClick={() => getGeoCoords()}
+                        className="location-icon fas fa-search-location"
+                    ></i>
                 </div>
             </div>
         </div>
