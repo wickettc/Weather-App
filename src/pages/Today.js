@@ -1,7 +1,7 @@
-import React from "react";
-import Map from "../components/Map";
-import degreeToDirection from "../utilities/degreeToDirection";
-import "../css/Today.css";
+import React from 'react';
+import Map from '../components/Map';
+import degreeToDirection from '../utilities/degreeToDirection';
+import '../css/Today.css';
 
 const Today = ({ city, displayUnits, weatherData, pop }) => {
     const {
@@ -33,34 +33,42 @@ const Today = ({ city, displayUnits, weatherData, pop }) => {
             </h2>
             <div className="today-container">
                 <div className="word-container">
-                    <div>Clouds: {clouds}%</div>
-                    <div>Dew Point: {Math.round(dew_point)}</div>
                     <div>
-                        Feels Like: {Math.round(feels_like)}
+                        <b>Clouds</b> {clouds}%
+                    </div>
+                    <div>
+                        <b>Dew Point</b> {Math.round(dew_point)}
+                    </div>
+                    <div>
+                        <b>Feels Like</b> {Math.round(feels_like)}
                         {displayUnits.deg}
                     </div>
-                    <div>Humidity: {humidity}%</div>
-                    <div>Pressure: {(pressure * 0.02953).toFixed(2)}in</div>
                     <div>
-                        <i className="fas fa-tint"></i> {pop * 100}%
+                        <b>Humidity</b> {humidity}%
                     </div>
                     <div>
-                        <i className="fas fa-wind"></i>{" "}
-                        {degreeToDirection(wind_deg)} {wind_speed}{" "}
-                        {displayUnits.speed}{" "}
+                        <b>Pressure</b> {(pressure * 0.02953).toFixed(2)}in
                     </div>
                     <div>
-                        Sunrise:{" "}
-                        {new Date(sunrise * 1000).toLocaleTimeString("en-US", {
-                            hour: "numeric",
-                            minute: "2-digit",
+                        <i className="fas fa-tint"></i> {Math.round(pop * 100)}%
+                    </div>
+                    <div>
+                        <i className="fas fa-wind"></i>{' '}
+                        {degreeToDirection(wind_deg)} {Math.round(wind_speed)}{' '}
+                        {displayUnits.speed}{' '}
+                    </div>
+                    <div>
+                        <b>Sunrise</b>{' '}
+                        {new Date(sunrise * 1000).toLocaleTimeString('en-US', {
+                            hour: 'numeric',
+                            minute: '2-digit',
                         })}
                     </div>
                     <div>
-                        Sunset:{" "}
-                        {new Date(sunset * 1000).toLocaleTimeString("en-US", {
-                            hour: "numeric",
-                            minute: "2-digit",
+                        <b>Sunset</b>{' '}
+                        {new Date(sunset * 1000).toLocaleTimeString('en-US', {
+                            hour: 'numeric',
+                            minute: '2-digit',
                         })}
                     </div>
                 </div>

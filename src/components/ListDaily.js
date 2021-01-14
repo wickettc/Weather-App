@@ -1,21 +1,20 @@
-import React, { useState } from "react";
-import "../css/List-Daily.css";
-import ExpandDaily from "./ExpandDaily";
+import React, { useState } from 'react';
+import ExpandDaily from './ExpandDaily';
 
 const ListDaily = ({ displayUnits, day }) => {
     const [showExpand, setShowExpand] = useState(false);
 
     const { pop, dt, temp, weather } = day;
-    let displayDate = "";
+    let displayDate = '';
     if (
         new Date(dt * 1000).toLocaleDateString() ===
         new Date().toLocaleDateString()
     ) {
-        displayDate = "Today";
+        displayDate = 'Today';
     } else {
         const d = new Date(dt * 1000);
-        const weekday = d.toLocaleString("en-US", { weekday: "short" });
-        const day = d.toLocaleString("en-US", { day: "numeric" });
+        const weekday = d.toLocaleString('en-US', { weekday: 'short' });
+        const day = d.toLocaleString('en-US', { day: 'numeric' });
         displayDate = `${weekday} ${day}`;
     }
     return (
@@ -26,11 +25,11 @@ const ListDaily = ({ displayUnits, day }) => {
             >
                 <div className="time-daily">{displayDate}</div>
                 <div>
-                    {Math.round(temp.max)} {displayUnits.deg}/
-                    {Math.round(temp.min)} {displayUnits.deg}
+                    {Math.round(temp.max)}/{Math.round(temp.min)}{' '}
+                    {displayUnits.deg}
                 </div>
                 <div>
-                    <i className="fas fa-tint"></i> {pop * 100}%
+                    <i className="fas fa-tint"></i> {Math.round(pop * 100)}%
                 </div>
                 <div>{weather[0].main}</div>
                 <img

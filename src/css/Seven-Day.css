@@ -1,8 +1,91 @@
-.seven-day-container {
-    width: 38%;
-}
+/* seven day */
 
 .seven-day-container h1 {
     text-align: center;
     margin-bottom: 3%;
+}
+
+/* seven day list */
+.list-daily-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.list-daily-container div {
+    margin: 15px;
+}
+
+.time-daily {
+    font-weight: 500;
+}
+
+/* seven day expand */
+.expand-daily-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand-daily-container div {
+    flex-basis: 25%;
+    margin: 5px;
+}
+
+/* media querys */
+
+@media only screen and (max-width: 600px) {
+    .seven-day-container {
+        width: 85%;
+    }
+    .list-daily-container div {
+        margin: 5px;
+    }
+    .expand-daily-container {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .seven-day-container {
+        width: 80%;
+    }
+    .list-daily-container {
+        font-size: 1.2rem;
+    }
+    .expand-daily-container {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .seven-day-container {
+        width: 70%;
+    }
+    .list-daily-container {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .seven-day-container {
+        width: 60%;
+    }
+    .list-daily-container {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 1210px) {
+    .seven-day-container {
+        width: 50%;
+    }
+    .list-daily-container {
+        font-size: 1.4rem;
+    }
 }

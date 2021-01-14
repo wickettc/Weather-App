@@ -5,6 +5,12 @@ import '../css/Hourly.css';
 const Hourly = ({ hourly, displayUnits, city }) => {
     //holder date to only display each date once
     let holderDate = '';
+    //figure today to make showDate = today
+    const today = `${new Date().toLocaleString('en-US', {
+        weekday: 'long',
+    })} ${new Date().toLocaleString('en-US', {
+        day: 'numeric',
+    })}`;
     const renderHourly = hourly.map((hour) => {
         const d = new Date(hour.dt * 1000);
         const weekday = d.toLocaleString('en-US', {
@@ -20,6 +26,7 @@ const Hourly = ({ hourly, displayUnits, city }) => {
         if (date !== holderDate) {
             showDate = date;
             holderDate = date;
+            if (showDate === today) showDate = 'Today';
         } else {
             showDate = false;
         }

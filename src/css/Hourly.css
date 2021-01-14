@@ -1,6 +1,4 @@
-.hourly-container {
-    width: 38%;
-}
+/* hourly */
 
 .hourly-container h1 {
     text-align: center;
@@ -12,4 +10,85 @@
     font-weight: 700;
     margin: 5px;
     font-style: italic;
+}
+
+/* list hourly */
+.list-hourly-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 2px;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+.list-hourly-container div {
+    margin: 15px;
+}
+
+.hourly-time {
+    font-weight: 500;
+}
+
+/* expand hourly */
+.expand-hourly-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.expand-hourly-container div {
+    flex-basis: 25%;
+    margin: 5px;
+}
+
+/* media querys */
+
+@media only screen and (max-width: 600px) {
+    .hourly-container {
+        width: 95%;
+    }
+    .expand-hourly-container {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .hourly-container {
+        width: 80%;
+    }
+    .expand-hourly-container {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .hourly-container {
+        width: 70%;
+    }
+    .expand-hourly-container {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .hourly-container {
+        width: 60%;
+    }
+    .expand-hourly-container {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1210px) {
+    .hourly-container {
+        width: 50%;
+    }
+    .expand-hourly-container {
+        font-size: 1.2rem;
+    }
 }

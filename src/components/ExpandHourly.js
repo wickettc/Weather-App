@@ -1,6 +1,5 @@
 import React from 'react';
 import degreeToDirection from '../utilities/degreeToDirection';
-import '../css/Expand-Hourly.css';
 
 const ExpandHourly = ({ hour, displayUnits }) => {
     const {
