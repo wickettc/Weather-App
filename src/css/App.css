@@ -2,6 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    color: white;
+    /* background: rgb(17, 20, 59); */
+    background: linear-gradient(
+        0deg,
+        rgba(50, 72, 198, 0.927608543417367) 0%,
+        rgba(240, 128, 128, 0.52) 100%
+    );
 }
 
 .content-container {

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.514);
     height: 45px;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .nav-bar-router-container nav li:hover {
-    color: #707070;
+    color: #b3a2a2;
 }
 
 .search-and-units-container {
@@ -41,6 +41,7 @@
     margin: auto;
     height: 100%;
     display: flex;
+    color: black;
 }
 
 .location-icon {
@@ -48,6 +49,7 @@
     margin: auto;
     font-size: 1.5rem;
     padding-left: 3px;
+    cursor: pointer;
 }
 
 #nav-bar {
@@ -64,6 +66,7 @@
         flex-direction: column;
         height: auto;
         min-height: 45px;
+        background-color: rgba(0, 0, 0, 0.678);
     }
     #nav-bar {
         position: absolute;
