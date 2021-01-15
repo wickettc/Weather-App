@@ -43,7 +43,6 @@ function App() {
                 latLon.longitude,
                 units
             );
-            console.log(response);
             setCity(response[1].data.name);
             setWeatherData(response[0].data);
             setLoading(false);
