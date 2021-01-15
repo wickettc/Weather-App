@@ -24,6 +24,17 @@ body {
 }
 
 /* loader */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.loader-container div {
+    margin: 15px;
+}
+
 .loader {
     margin-top: 8%;
     border: 10px solid #f3f3f3;

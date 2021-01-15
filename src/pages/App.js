@@ -4,6 +4,7 @@ import Today from '../pages/Today';
 import Hourly from '../pages/Hourly';
 import SevenDay from '../pages/SevenDay';
 import NavBar from '../components/NavBar';
+import Loader from '../components/Loader';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import _ from 'lodash';
 import '../css/App.css';
@@ -76,7 +77,7 @@ function App() {
                             path="/"
                             render={(props) =>
                                 loading ? (
-                                    <div className="loader"></div>
+                                    <Loader />
                                 ) : (
                                     <Today
                                         city={city}
@@ -92,7 +93,7 @@ function App() {
                             path="/hourly"
                             render={(props) =>
                                 loading ? (
-                                    <div className="loader"></div>
+                                    <Loader />
                                 ) : (
                                     <Hourly
                                         city={city}
@@ -107,7 +108,7 @@ function App() {
                             path="/sevenday"
                             render={() =>
                                 loading ? (
-                                    <div className="loader"></div>
+                                    <Loader />
                                 ) : (
                                     <SevenDay
                                         city={city}
