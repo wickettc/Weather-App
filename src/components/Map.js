@@ -6,6 +6,16 @@ const containerStyle = {
     height: '400px',
 };
 
+if (document.body.clientWidth < 500) {
+    containerStyle.width = '300px';
+    containerStyle.height = '300px';
+}
+
+if (document.body.clientWidth < 320) {
+    containerStyle.width = '260px';
+    containerStyle.height = '260px';
+}
+
 function Map({ lat, lon }) {
     const center = {
         lat,
