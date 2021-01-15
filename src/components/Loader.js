@@ -4,11 +4,14 @@ const Loader = () => {
     const [displayText, setDisplayText] = useState('');
 
     useEffect(() => {
-        setTimeout(() => {
+        const timeRef = setTimeout(() => {
             setDisplayText(
                 'Either allow location services or search for a place'
             );
         }, 2500);
+        return () => {
+            clearTimeout(timeRef);
+        };
     }, []);
 
     return (
