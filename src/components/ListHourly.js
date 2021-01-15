@@ -28,7 +28,7 @@ const ListHourly = ({ hour, displayUnits }) => {
                 <div>{weather[0].main}</div>
                 <img
                     alt={weather[0].description}
-                    src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
+                    src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
                 />
             </div>
             {showExpand ? (
