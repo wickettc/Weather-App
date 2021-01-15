@@ -24,7 +24,7 @@ const Today = ({ city, displayUnits, weatherData, pop }) => {
                 <h1>Today in {city}</h1>
                 <img
                     alt={weather[0].description}
-                    src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
+                    src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
                 />
             </div>
             <h2 className="title-container-2">
