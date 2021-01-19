@@ -42,10 +42,10 @@
 
 @media only screen and (max-width: 600px) {
     .seven-day-container {
-        width: 85%;
+        width: 95%;
     }
     .list-daily-container div {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         margin: 2px;
     }
     .list-daily-container img {
@@ -61,10 +61,10 @@
         width: 80%;
     }
     .list-daily-container {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
     .expand-daily-container {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -73,6 +73,9 @@
         width: 70%;
     }
     .list-daily-container {
+        font-size: 1rem;
+    }
+    .expand-daily-container {
         font-size: 1rem;
     }
 }
@@ -84,6 +87,9 @@
     .list-daily-container {
         font-size: 1.2rem;
     }
+    .expand-daily-container {
+        font-size: 1.2rem;
+    }
 }
 
 @media only screen and (min-width: 1210px) {
@@ -92,5 +98,8 @@
     }
     .list-daily-container {
         font-size: 1.4rem;
+    }
+    .expand-daily-container {
+        font-size: 1.2rem;
     }
 }

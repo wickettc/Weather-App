@@ -68,6 +68,11 @@
     .hourly-container {
         width: 80%;
     }
+
+    .list-hourly-container {
+        font-size: 0.9rem;
+    }
+
     .expand-hourly-container {
         font-size: 0.9rem;
     }
@@ -77,8 +82,12 @@
     .hourly-container {
         width: 70%;
     }
+
+    .list-hourly-container {
+        font-size: 1rem;
+    }
     .expand-hourly-container {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -86,14 +95,22 @@
     .hourly-container {
         width: 60%;
     }
+
+    .list-hourly-container {
+        font-size: 1.2rem;
+    }
     .expand-hourly-container {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 
 @media only screen and (min-width: 1210px) {
     .hourly-container {
         width: 50%;
+    }
+
+    .list-hourly-container {
+        font-size: 1.4rem;
     }
     .expand-hourly-container {
         font-size: 1.2rem;
